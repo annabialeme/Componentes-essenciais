@@ -36,11 +36,13 @@ export default function MainScreen() {
       { id: "3", title: "Card 3", description: "Gab lindooo" },
     ];
   
-    const renderCard = ({ item }) => <Card title={item.title} description={item.description} />;
+    const renderCard = ({ item }) => <Card title={item.title} description={item.description}
+    imageUrl={item.imageUrl}
+      onPress={() => alert(`Você clicou em ${item.title}`)} />;
   
     return (
       <View style={styles.container}>
-        <Header />
+        <Header title ="Minha página com Props" />
         <FlatList
           data={cardData}
           keyExtractor={(item) => item.id}
