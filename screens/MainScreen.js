@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, TextInput, Button, View } from "react-native";
 import CustomButton from "../components/CustomButton";
+import Header from "../components/Header";
+import Card from "../components/Card";
 
 export default function MainScreen() {
   const [text, setText] = useState("");
@@ -26,6 +28,28 @@ export default function MainScreen() {
     </View>
   );
 }
+
+export default function MainScreen() {
+    const cardData = [
+      { id: "1", title: "Card 1", description: "Gavi lindoooo" },
+      { id: "2", title: "Card 2", description: "Bia lindaaaa" },
+      { id: "3", title: "Card 3", description: "Gab lindooo" },
+    ];
+  
+    const renderCard = ({ item }) => <Card title={item.title} description={item.description} />;
+  
+    return (
+      <View style={styles.container}>
+        <Header />
+        <FlatList
+          data={cardData}
+          keyExtractor={(item) => item.id}
+          renderItem={renderCard}
+        />
+      </View>
+    );
+  }
+  
 
 const styles = StyleSheet.create({
   container: {
