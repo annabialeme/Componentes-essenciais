@@ -1,6 +1,10 @@
 import React from "react";
 import {View, Text, Image, StyleSheet} from 'react-native';
+import ScrollablePage from "./src/screens/ScrollablePage";
 
+export default function App() {
+  return <ScrollablePage />;
+}
 export default function App() {
 return (
   <View style ={styles.container}>
